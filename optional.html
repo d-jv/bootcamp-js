@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Exercises</title>
+</head>
+<body>
+    <script>
+        // 1.­ Escriba una función/método que determine la cantidad de 0’s a la derecha de n! (factorial) 
+        function zerosInFactorial (num) {
+        //---------- ESTO es para obtener el valor de un Factorial --------
+            let x = 1;
+            let count = 0;
+            for (let i = num; i > 0; i--) {
+                x = x * i;
+            }
+        //------para arrriba te da el valor de un factorial-------  para abajo experimental------  
+            // let numString = x.toString();
+            // while (numString.slice(-1) == '0'){
+            //     numString = numString.slice(0, -1);                 ******* ESTO FUNCIONA SOLO HASTA EL 21, al 22 comienzan a salir numeros con E (*10 a x exponente) y se va a la cresta el programa ******
+            //     count = count + 1;
+            // }
+            // return count;
+        // }
+        // ------------------------------------------------------------------
+        //---------------Con un for--------------------------
+        // let count = 0;            
+        // for (let i = 5; Math.floor(num / i) >= 1; i = i * 5){
+        //     count += Math.floor(num / i);
+        // }
+        // return count;
+        //----------------------------------------------------
+        //-----------------Con un while---------------------------
+            // let count = 0;
+            // while (num = Math.floor(num / 5)){
+            //     count = count + num;
+            // }    
+            // return count;
+        }
+
+        // 2.­ Escriba una función/método que dado un número entero, entregue su representación en palabras, Ej. 145 ­> “ciento cuarenta y cinco” 
+        function numToWords(num) {
+            let numString = num.toString();
+            let group1 = ['', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciseis', 'diecisiete', 'dieciocho', 'diecinueve', 'veinte', 'veintuno', 'veintidos', 'veintitres', 'veinticuatro', 'veinticinco', 'veintiseis', 'veintisiete', 'veintiocho', 'veintinueve' ];
+            let group2 = ['', '', '', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 'setenta', 'ochenta',
+                        'noventa'];
+            if (num === 0) {
+                return 'cero';
+            }
+            if (num <= 29) {
+                return group1[num];
+            }
+            if (numString.length === 2 && numString[1] !== '0') {
+                return group2[numString[0]] + ' y ' + group1[numString[1]];
+            }
+            if (numString.length === 2 && numString[1] === '0') {
+                return group2[numString[0]];
+            }
+            
+            //FALTA TERMINAR
+            if (numString.length == 3) {
+                if (numString[0] === '1' && numString[1] === '0' && numString[2] === '0'){
+                    return 'cien'
+                }
+                else (numString[1] === '0' && numString[2] === '0'){
+                    return group1[numString[0]] + 'cientos';
+                }
+            }
+        }
+        // 3.­ Considere un tablero de ajedrez de NxN, realice un algoritmo que visite cada espacio del tablero, usando solamente los movimientos de un caballo. (Puntos extras si se visita cada espacio una sola vez)
+        
+        </script>
+    </body>
+    </html>
