@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My jQuery basic assignment!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* * {
+        outline: 1px dotted red;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        } */
+        .btn {
+            box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <h2 class="mt-4">Click</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="click-btn">click</button>
+            </div>
+            <div class="col-6 text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">click</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">Hide</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="hide-btn">hide</button>
+            </div>
+            <div class="col-6 text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">hide</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">Show</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="show-btn">show</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">show</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">Toggle</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="toggle-btn">toggle</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">toggle</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">SlideDown</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="slideDown-btn">slideDown</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">slideDown</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">SlideUp</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="slideUp-btn">slideUp</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">slideUp</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">SlideToggle</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="slideToggle-btn">slideToggle</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">slideToggle</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">FadeIn</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="fadeIn-btn">fadeIn</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">fadeIn</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">FadeOut</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="fadeOut-btn">fadeOut</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">fadeOut</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">AddClass</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="addClass-btn">addClass</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">addClass</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">Before</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="before-btn">before</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">before</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">After</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="after-btn">after</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">after</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">Append</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="append-btn">append</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">append</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">HTML</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="html-btn">html</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">html</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">Attr</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="attr-btn">attr</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">attr</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">Val</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="val-btn">val</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">val</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h2 class="">Text</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-4 text-end">
+                <button class="btn btn-primary" id="text-btn">text</button>
+            </div>
+            <div class="col-6  text-start">
+                <p class="mt-2">Click to know how <span class="fw-bold">text</span> function in jQuery works!</p>
+            </div>
+        </div>
+        <hr>
+    </div>
+</body>
+</html>
