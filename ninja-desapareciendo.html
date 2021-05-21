@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Desapareciendo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* * {
+        outline: 1px dotted red;
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        } */
+        div img{
+            display: block;
+            width: 100%;
+        }
+        button, img{
+            box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+            border-radius: 1rem;
+            border: black solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-light">
+        <h2>jQuery - assignment 1</h2>
+        <div class="row">
+            <div class="col-3"><img src="https://i.pinimg.com/originals/17/15/52/171552e3dda259786539aca5e706291d.jpg" alt=""></div>
+            <div class="col-3"><img src="https://i.pinimg.com/originals/17/15/52/171552e3dda259786539aca5e706291d.jpg" alt=""></div>
+            <div class="col-3"><img src="https://i.pinimg.com/originals/17/15/52/171552e3dda259786539aca5e706291d.jpg" alt=""></div>
+            <div class="col-3"><img src="https://i.pinimg.com/originals/17/15/52/171552e3dda259786539aca5e706291d.jpg" alt=""></div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-3"><img src="https://i.pinimg.com/originals/17/15/52/171552e3dda259786539aca5e706291d.jpg" alt=""></div>
+            <div class="col-3"><img src="https://i.pinimg.com/originals/17/15/52/171552e3dda259786539aca5e706291d.jpg" alt=""></div>
+            <div class="col-3"><img src="https://i.pinimg.com/originals/17/15/52/171552e3dda259786539aca5e706291d.jpg" alt=""></div>
+            <div class="col-3"><img src="https://i.pinimg.com/originals/17/15/52/171552e3dda259786539aca5e706291d.jpg" alt=""></div>
+        </div>
+        <footer>
+            <button id="btn-restore" class="btn btn-success mt-4">Restore</button>
+        </footer>
+    </div>
+    <!-- Aquí el código jQuery-->
+    <script>
+        $(document).ready(function(){
+            $('div img').on('click', function(){
+                $(this).fadeOut();
+                // $(this).fadeOut().attr('class','col-3 d-none')
+            })
+            $('#btn-restore').on('click', function(){
+                $('div img').fadeIn();
+                // $('div .col-3').attr('class','col-3 d-block');
+            })
+        })
+    </script>
+</body>
+</html>
