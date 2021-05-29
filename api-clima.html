@@ -51,7 +51,7 @@
             let city_data = {};
             let temp_in_celcius = [];
 
-            $.get('https://api.openweathermap.org/data/2.5/weather?q=' + city_id + '&APPID=8d848fbcf3cdb1882c322cdeff64058c', function(data){
+            $.get('https://api.openweathermap.org/data/2.5/weather?q=' + city_id + '&APPID=xxxxRemovedForSecurityxxxxxxxxx', function(data){
                 city_data = data;
                 temp_in_celcius = (city_data.main.temp - 273.15).toFixed(2);
                 console.log(city_data);
@@ -69,7 +69,7 @@
             let city_data2 = {};
             let temp_in_celcius = [];
             
-            $.get('https://api.openweathermap.org/data/2.5/weather?lat=' + city_lat + '&lon=' + city_lon + '&APPID=8d848fbcf3cdb1882c322cdeff64058c', function(data2){
+            $.get('https://api.openweathermap.org/data/2.5/weather?lat=' + city_lat + '&lon=' + city_lon + '&APPID=xxxxxxRemovedForSecurityxxxxxxxx', function(data2){
                 city_data2 = data2;
                 temp_in_celcius2 = (city_data2.main.temp - 273.15).toFixed(2);
                 console.log(city_data2);
