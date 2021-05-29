@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoT Optional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-light">
+        <h1 class="text-center">Game of Thrones Optional Assignment</h1>
+        <div class="row">
+            <div class="col-3">
+                <img id="362" class="border border-4 border-secondary shadow" src="./got-imgs/stark.jpg" alt="">
+            </div>
+            <div class="col-3">
+                <img id="378" class="border border-4 border-secondary shadow" src="./got-imgs/targaryen.jpg" alt="">
+            </div>
+            <div class="col-3">
+                <img id="229" class="border border-4 border-secondary shadow" src="./got-imgs/lannister.jpg" alt="">
+            </div>
+            <div class="col-3">
+                <img id="17" class="border border-4 border-secondary shadow" src="./got-imgs/baratheon.png" alt="">
+            </div>
+        </div>
+        <div class="container mt-5 border border-4 shadow">
+            <div class="row mx-auto">
+                <div class="col">
+                    <h5 class="fw-bold">House Details</h5>
+                    <br>
+                    <p><span class="fw-bold">Name: </span><span id="house_name"></span></p>
+                    <p><span class="fw-bold">Words: </span><span id="house_words"></span></p>
+                    <br>
+                    <p><span class="fw-bold">Titles: </span><span id="house_titles"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('img').on('click',function(){
+            const house_id = $(this).attr('id');
+            $.get('https://anapioficeandfire.com/api/houses/' + house_id, function(data) {
+                house_data = data;
+                // console.log(house_data);
+                $('#house_name').html(house_data.name);
+                $('#house_words').html(house_data.words);
+                $('#house_titles').html((house_data.titles).join(', '));
+            })
+        })
+    </script>
+</body>
+</html>
