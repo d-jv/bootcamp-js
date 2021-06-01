@@ -1,3 +1,21 @@
+<div class="modal fade" tabindex="-1" id="modalGoT">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">House Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><span class="fw-bold">Name: </span><span id="house_name2"></span></p>
+                <p><span class="fw-bold">Words: </span><span id="house_words2"></span></p>
+                <p><span class="fw-bold">Titles: </span><span id="house_titles2"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,19 +37,19 @@
         <h1 class="text-center">Game of Thrones Optional Assignment</h1>
         <div class="row">
             <div class="col-3">
-                <img id="362" class="border border-4 border-secondary shadow" src="./got-imgs/stark.jpg" alt="">
+                <img data-bs-toggle="modal" data-bs-target="#modalGoT" id="362" class="border border-4 border-secondary shadow" src="./got-imgs/stark.jpg" alt="">
             </div>
             <div class="col-3">
-                <img id="378" class="border border-4 border-secondary shadow" src="./got-imgs/targaryen.jpg" alt="">
+                <img data-bs-toggle="modal" data-bs-target="#modalGoT" id="378" class="border border-4 border-secondary shadow" src="./got-imgs/targaryen.jpg" alt="">
             </div>
             <div class="col-3">
-                <img id="229" class="border border-4 border-secondary shadow" src="./got-imgs/lannister.jpg" alt="">
+                <img data-bs-toggle="modal" data-bs-target="#modalGoT" id="229" class="border border-4 border-secondary shadow" src="./got-imgs/lannister.jpg" alt="">
             </div>
             <div class="col-3">
-                <img id="17" class="border border-4 border-secondary shadow" src="./got-imgs/baratheon.png" alt="">
+                <img data-bs-toggle="modal" data-bs-target="#modalGoT" id="17" class="border border-4 border-secondary shadow" src="./got-imgs/baratheon.png" alt="">
             </div>
         </div>
-        <div class="container mt-5 border border-4 shadow">
+        <!-- <div class="container mt-5 border border-4 shadow">
             <div class="row mx-auto">
                 <div class="col">
                     <h5 class="fw-bold">House Details</h5>
@@ -42,17 +60,27 @@
                     <p><span class="fw-bold">Titles: </span><span id="house_titles"></span></p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <script>
+        // $('img').on('click',function(){
+        //     const house_id = $(this).attr('id');
+        //     $.get('https://anapioficeandfire.com/api/houses/' + house_id, function(data) {
+        //         house_data = data;
+        //         // console.log(house_data);
+        //         $('#house_name').html(house_data.name);
+        //         $('#house_words').html(house_data.words);
+        //         $('#house_titles').html((house_data.titles).join(', '));
+        //     })
+        // })
         $('img').on('click',function(){
             const house_id = $(this).attr('id');
             $.get('https://anapioficeandfire.com/api/houses/' + house_id, function(data) {
                 house_data = data;
                 // console.log(house_data);
-                $('#house_name').html(house_data.name);
-                $('#house_words').html(house_data.words);
-                $('#house_titles').html((house_data.titles).join(', '));
+                $('#house_name2').html(house_data.name);
+                $('#house_words2').html(house_data.words);
+                $('#house_titles2').html((house_data.titles).join(', '));
             })
         })
     </script>
